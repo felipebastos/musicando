@@ -1,4 +1,4 @@
-'''Aqua - Composição de som ambiente.
+"""Ants - Composição de som ambiente.
     Copyright (C) 2021  Felipe Bastos Nunes
 
     This program is free software: you can redistribute it and/or modify
@@ -13,7 +13,8 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-'''
+"""
+
 Root.default = 'E'
 Scale.default = 'minorPentatonic'
 Clock.bpm = 112
@@ -29,4 +30,3 @@ i1 >> arpy(i0.pitch) + [(0,2,4), (0,2,6), (0,2,4), (0,2,4)]
 
 solo = P[0,2,3,4,5,6]
 s0 >> viola(solo[0:6], dur=var([1/4,1]))
-
