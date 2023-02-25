@@ -14,17 +14,37 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+from FoxDot import (
+    Root,
+    Scale,
+    Clock,
+    Player,
+    P,
+    PDur,
+    bass,
+    play,
+    Go,
+    var,
+    arpy,
+    viola,
+)
 
 Root.default = "E"
 Scale.default = "minorPentatonic"
 Clock.bpm = 112
 
+b0 = Player("b0")
 b0 >> play("[VV]-o-")
+b1 = Player("b1")
 b1 >> play("[**]* (* )")
 
 line = P[0, 2, 4, 3]
+i0 = Player("bass")
 i0 >> bass(var(line, 4), dur=PDur(3, 8))
+i1 = Player("i1")
 i1 >> arpy(i0.pitch) + [(0, 2, 4), (0, 2, 6), (0, 2, 4), (0, 2, 4)]
 
 solo = P[0, 2, 3, 4, 5, 6]
 s0 >> viola(solo[0:6], dur=var([1 / 4, 1]))
+
+Go()

@@ -1,4 +1,26 @@
+"""Drums - Composição de som ambiente.
+    Copyright (C) 2021  Felipe Bastos Nunes
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+from FoxDot import play, PDur, Go, Clock, Player
+
 Clock.bpm = 120
+
+b0 = Player("b0")
+b1 = Player("b1")
+b2 = Player("b2")
 
 # Dicionário das peças
 # bg-hihat
@@ -152,10 +174,24 @@ b2 >> play("v  v v  v ", dur=b0.dur)
 Clock.bpm = 120
 b0 >> play(
     "---- - ----",
-    dur=[1 / 2, 1 / 2, 1 / 2, 1 / 4, 1 / 4, 1 / 4, 1 / 4, 1 / 4, 1 / 4, 1 / 2, 1 / 2],
+    dur=[
+        1 / 2,
+        1 / 2,
+        1 / 2,
+        1 / 4,
+        1 / 4,
+        1 / 4,
+        1 / 4,
+        1 / 4,
+        1 / 4,
+        1 / 2,
+        1 / 2,
+    ],
 )
 b1 >> play("x o o o xo ", dur=b0.dur)
 
 # Shuffle Groove
 b0 >> play("~ ~~ ~", dur=PDur(2, 4))
 b1 >> play("X  o  ", dur=b0.dur)
+
+Go()

@@ -14,15 +14,38 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
+from FoxDot import (
+    Root,
+    Scale,
+    Clock,
+    Player,
+    P,
+    PDur,
+    bass,
+    play,
+    Go,
+    var,
+    ambi,
+    keys,
+)
 
 Root.default = "A"
 Scale.default = "minor"
 Clock.bpm = 95
 
+b0 = Player("b0")
 b0 >> play(" X")
+b1 = Player("b1")
 b1 >> play("x-o-")
+b2 = Player("b2")
 b2 >> play("[VV] ")
+x1 = Player("x1")
 x1 >> play("** (* )")
+p1 = Player("bass")
 p1 >> bass(var([0, 5, 6, 2], 4), dur=PDur(3, 8))
+p2 = Player("ambi")
 p2 >> ambi(p1.pitch, amp=0.6)
+p3 = Player("keys")
 p3 >> keys(p1.pitch) + [(0, 2, 4), (0, 2, 6), (0, 2, 5), (0, 2, 4)]
+
+Go()
