@@ -1,4 +1,4 @@
-'''Song0 - Experimentos com FoxDot
+"""Song0 - Experimentos com FoxDot
     Copyright (C) 2021  Felipe Bastos Nunes
 
     This program is free software: you can redistribute it and/or modify
@@ -13,18 +13,13 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-'''
+"""
 
-Root.default = 'D'
-Scale.default = 'minor'
-s0 >> play('[VV]-o[----]')
-sc >> play('[**]( *)')
+Root.default = "D"
+Scale.default = "minor"
+s0 >> play("[VV]-o[----]")
+sc >> play("[**]( *)")
 s1 >> sawbass(
-    var([0,2,5,4],4),
-    )
-s2 >> ambi(
-    [0,2,5,4],
-    oct=5,
-    amp=0.3
-    )
-
+    var([0, 2, 5, 4], 4),
+)
+s2 >> ambi([0, 2, 5, 4], oct=5, amp=0.3)

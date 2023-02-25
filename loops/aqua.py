@@ -1,4 +1,4 @@
-'''Aqua - Composição de som ambiente.
+"""Aqua - Composição de som ambiente.
     Copyright (C) 2021  Felipe Bastos Nunes
 
     This program is free software: you can redistribute it and/or modify
@@ -13,17 +13,16 @@
 
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-'''
+"""
 
-Root.default = 'A'
-Scale.default = 'minor'
+Root.default = "A"
+Scale.default = "minor"
 Clock.bpm = 95
 
-b0 >> play(' X')
-b1 >> play('x-o-')
-b2 >> play('[VV] ')
-x1 >> play('** (* )')
-p1 >> bass(var([0,5,6,2], 4), dur=PDur(3,8))
+b0 >> play(" X")
+b1 >> play("x-o-")
+b2 >> play("[VV] ")
+x1 >> play("** (* )")
+p1 >> bass(var([0, 5, 6, 2], 4), dur=PDur(3, 8))
 p2 >> ambi(p1.pitch, amp=0.6)
-p3 >> keys(p1.pitch) + [(0,2,4), (0,2,6), (0,2,5), (0,2,4)]
-
+p3 >> keys(p1.pitch) + [(0, 2, 4), (0, 2, 6), (0, 2, 5), (0, 2, 4)]

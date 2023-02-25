@@ -15,18 +15,16 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
-Root.default = 'E'
-Scale.default = 'minorPentatonic'
+Root.default = "E"
+Scale.default = "minorPentatonic"
 Clock.bpm = 112
 
-b0 >> play(
-    '[VV]-o-'
-    )
-b1 >> play('[**]* (* )')
+b0 >> play("[VV]-o-")
+b1 >> play("[**]* (* )")
 
 line = P[0, 2, 4, 3]
-i0 >> bass(var(line, 4), dur=PDur(3,8))
-i1 >> arpy(i0.pitch) + [(0,2,4), (0,2,6), (0,2,4), (0,2,4)]
+i0 >> bass(var(line, 4), dur=PDur(3, 8))
+i1 >> arpy(i0.pitch) + [(0, 2, 4), (0, 2, 6), (0, 2, 4), (0, 2, 4)]
 
-solo = P[0,2,3,4,5,6]
-s0 >> viola(solo[0:6], dur=var([1/4,1]))
+solo = P[0, 2, 3, 4, 5, 6]
+s0 >> viola(solo[0:6], dur=var([1 / 4, 1]))
